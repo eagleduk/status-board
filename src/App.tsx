@@ -1,25 +1,22 @@
-import { Link, Outlet } from "react-router-dom";
+import Header from "./layouts/Header";
+import Footer from "./layouts/Footer";
+import Main from "./layouts/Main";
+import { styled } from "styled-components";
+
+const BodyStyled = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
+
 function App() {
   return (
-    <div className="App">
-      <header>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/info">info</Link>
-            </li>
-            <li>
-              <Link to="/calendar">calendar</Link>
-            </li>
-            <li>
-              <Link to="/address">address</Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
-      App.tsx <Outlet />
-      <footer>&copy; SJ.LEE</footer>
-    </div>
+    <BodyStyled>
+      <Header />
+      <Main />
+      <Footer />
+    </BodyStyled>
   );
 }
 
