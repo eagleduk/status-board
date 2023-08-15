@@ -14,7 +14,7 @@ const Router = createBrowserRouter([
         element: <h1>info</h1>,
       },
       {
-        path: "/calendar/:month",
+        path: "/calendar/:year/:month",
         element: <Calendar />,
       },
       {

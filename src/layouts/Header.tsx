@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 
@@ -35,6 +36,16 @@ const HeaderStyled = styled.header`
 `;
 
 function Header() {
+  const [year, setYear] = useState(0);
+  const [month, setMonth] = useState(0);
+
+  useEffect(() => {
+    const date = new Date();
+
+    setYear(date.getFullYear());
+    setMonth(date.getMonth());
+  }, []);
+
   return (
     <HeaderStyled>
       <nav>
@@ -43,7 +54,7 @@ function Header() {
             <Link to="/info">info</Link>
           </li>
           <li>
-            <Link to="/calendar">calendar</Link>
+            <Link to={`/calendar/${year}/${month + 1}`}>calendar</Link>
           </li>
           <li>
             <Link to="/address">address</Link>
