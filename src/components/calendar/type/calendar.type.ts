@@ -21,4 +21,5 @@ export type TDateCard = {
   date: number;
   day: number;
   schedule?: TSchedule[];
+  viewMonth?: boolean;
 };

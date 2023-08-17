@@ -29,17 +29,18 @@ export const CalendarBody = styled.div`
   grid-template-columns: repeat(7, 1fr);
   border-width: 1px;
   border-style: solid;
-  border-color: black;
+  border-color: lightgrey;
   box-sizing: border-box;
 `;
 
-export const DateStyled = styled.div<{ $day: number }>`
+export const DateStyled = styled.div<{ $day: number; $viewMonth: boolean }>`
   height: 100%;
   border-width: 1px;
   border-style: solid;
-  border-color: black;
+  border-color: lightgrey;
   box-sizing: border-box;
   p {
+    opacity: ${(props) => (props.$viewMonth ? 1 : 0.2)};
     color: white;
     span {
       display: flex;

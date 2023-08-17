@@ -16,7 +16,8 @@ const schedule: TSchedules = {
       hour: 2,
       place: "마루공원",
       title: "title1",
-      location: "",
+      location:
+        "https://map.kakao.com/?map_hybrid=true&w3w=%ED%87%B4%EA%B7%BC.%EC%84%B1%EB%AA%85.%ED%99%98%ED%9D%AC&urlLevel=1",
       team: "",
     },
     {
@@ -24,7 +25,8 @@ const schedule: TSchedules = {
       hour: 2,
       place: "마루공원",
       title: "title2",
-      location: "",
+      location:
+        "https://map.kakao.com/?map_hybrid=true&w3w=%ED%87%B4%EA%B7%BC.%EC%84%B1%EB%AA%85.%ED%99%98%ED%9D%AC&urlLevel=1",
       team: "",
     },
   ],
@@ -90,6 +92,7 @@ function Calendar() {
       +month === 12 ? 1 : +month + 1
     }`;
   };
+
   return (
     <CalendarWarpper>
       <CalendarHeader>
@@ -119,6 +122,7 @@ function Calendar() {
               date={date}
               day={day}
               schedule={schedule[time]}
+              viewMonth={true}
             />
           );
         })}
