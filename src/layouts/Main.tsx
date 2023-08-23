@@ -2,9 +2,10 @@ import { Outlet } from "react-router-dom";
 import { styled } from "styled-components";
 
 const MainStyled = styled.main`
-  width: 100%;
+  max-width: 100%;
   height: 100%;
-  min-width: 400px;
+  padding: 20px 8px;
+  box-sizing: border-box;
 `;
 
 function Main() {
