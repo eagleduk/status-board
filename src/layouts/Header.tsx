@@ -57,7 +57,7 @@ function Header() {
             <Link to={`/calendar/${year}/${month + 1}`}>calendar</Link>
           </li>
           <li>
-            <Link to={`/schedule/${year}/${month + 1}`}>schedule</Link>
+            <Link to={`/schedule/`}>schedule</Link>
           </li>
           <li>
             <Link to="/address">address</Link>

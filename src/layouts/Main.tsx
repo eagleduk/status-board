@@ -6,6 +6,7 @@ const MainStyled = styled.main`
   height: 100%;
   padding: 20px 8px;
   box-sizing: border-box;
+  overflow-y: auto;
 `;
 
 function Main() {

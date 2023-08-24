@@ -1,6 +1,7 @@
 1. 소개
-2. 스케줄 캘린더
-3. 연락처?
+2. 캘린더
+3. 스케줄
+4. 연락처?
 
 Database : mongoDB, firebase, notion 중 택 1
 table: info, calendar, address
@@ -13,7 +14,7 @@ info
 - 코치: coach
 - 총무: General Affairs
 
-calendar
+calendar, schedule
 
 - 날자: date
 - 시작 시간: time
@@ -22,6 +23,7 @@ calendar
 - 장소: place
 - 위치: location
 - 팀: null
+- 홈: isHome
 
 address
 

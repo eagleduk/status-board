@@ -4,9 +4,14 @@ export type TSchedule = {
   place: string;
   title: string;
   location: string;
-  team: string;
+  team: string | undefined;
+  isHome: boolean;
 };
 
 export type TSchedules = {
   [key: number]: TSchedule[];
+};
+
+export type TScheduleItem = {
+  item: TSchedule;
 };
