@@ -16,7 +16,11 @@ function ScheduleItem({
           <span>{team}</span>
         </p>
         <p>
-          <a href={location} target="_black" title={place}>
+          <a
+            href={`https://map.kakao.com/?w3w=${location}`}
+            target="_black"
+            title={place}
+          >
             <span>🚻</span>
           </a>
         </p>

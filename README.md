@@ -30,3 +30,8 @@ address
 - 이름: name
 - 연락처: phone
 - 비고: etc
+
+1. 커스텀 훅 으로
+   1. development 일 떄,
+   2. production 일 때,
+   3. 나누어서 데이터 가져올 수 있도록
