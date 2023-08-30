@@ -15,3 +15,13 @@ export type TSchedules = {
 export type TScheduleItem = {
   item: TSchedule;
 };
+
+export type TNotionDatabase<T> = {
+  results: T[];
+  object: string;
+  next_cursor?: null;
+  has_more?: boolean;
+  type?: "string";
+  page_or_database?: any;
+  developer_survey?: "string";
+};

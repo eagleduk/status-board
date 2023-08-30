@@ -1,4 +1,3 @@
-import { Client } from "@notionhq/client";
 import ScheduleItem from "./ScheduleItem";
 import {
   ScheduleStyled,
@@ -6,8 +5,6 @@ import {
   ScheduleItemRowsStyled,
   ScheduleItemTitleStyled,
 } from "./style/schedule.style";
-import { TSchedules } from "./type/schedule.type";
-import { useEffect } from "react";
 import { useScheduleData } from "./hooks/schedule.hooks";
 
 // const datas: TSchedules = {
@@ -108,53 +105,53 @@ function Schedule() {
   //     });
   //   })();
   // });
-  console.log(datas);
+  // console.log(datas);
   return (
     <ScheduleStyled>
-      {datas?.results.map(
-        ({
-          id,
-          properties: {
-            date: {
-              date: { start: date },
+      {datas &&
+        datas.results.map(
+          ({
+            id,
+            properties: {
+              date: {
+                date: { start: date },
+              },
+              home: { checkbox: isHome },
+              hour: { number: hour },
+              location: {
+                rich_text: [
+                  {
+                    text: { content: location },
+                  },
+                ],
+              },
+              place: {
+                rich_text: [
+                  {
+                    text: { content: place },
+                  },
+                ],
+              },
+              time: { number: time },
+              team: {
+                rich_text: [],
+              },
             },
-            home: { checkbox: isHome },
-            hour: { number: hour },
-            location: {
-              rich_text: [
-                {
-                  text: { content: location },
-                },
-              ],
-            },
-            place: {
-              rich_text: [
-                {
-                  text: { content: place },
-                },
-              ],
-            },
-            time: { number: time },
-            team: {
-              rich_text: [],
-            },
-          },
-        }) => {
-          const title = "",
-            team = "";
-          return (
-            <ScheduleItemsStyled key={id}>
-              <ScheduleItemTitleStyled>{date}</ScheduleItemTitleStyled>
-              <ScheduleItemRowsStyled>
-                <ScheduleItem
-                  item={{ isHome, hour, location, place, time, title, team }}
-                />
-                ;
-              </ScheduleItemRowsStyled>
-            </ScheduleItemsStyled>
-          );
-        }
-      )}
+          }) => {
+            const title = "",
+              team = "";
+            return (
+              <ScheduleItemsStyled key={id}>
+                <ScheduleItemTitleStyled>{date}</ScheduleItemTitleStyled>
+                <ScheduleItemRowsStyled>
+                  <ScheduleItem
+                    item={{ isHome, hour, location, place, time, title, team }}
+                  />
+                </ScheduleItemRowsStyled>
+              </ScheduleItemsStyled>
+            );
+          }
+        )}
       {/* {Object.entries(datas).map(([key, values]) => {
         const text = new Date(+key);
         return (
