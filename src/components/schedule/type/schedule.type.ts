@@ -1,11 +1,12 @@
 export type TSchedule = {
-  time: number;
-  hour: number;
-  place: string;
-  title: string;
-  location: string;
-  team: string | undefined;
+  time: number | null;
+  hour: number | null;
+  place: string | null;
+  title: string | null;
+  location: string | null;
+  team: string | null;
   isHome: boolean;
+  id: string;
 };
 
 export type TSchedules = {
@@ -17,11 +18,12 @@ export type TScheduleItem = {
 };
 
 export type TNotionDatabase<T> = {
-  results: T[];
-  object: string;
-  next_cursor?: null;
-  has_more?: boolean;
-  type?: "string";
-  page_or_database?: any;
-  developer_survey?: "string";
+  [key: string]: T[];
+  // results: T[];
+  // object: string;
+  // next_cursor?: null;
+  // has_more?: boolean;
+  // type?: "string";
+  // page_or_database?: any;
+  // developer_survey?: "string";
 };

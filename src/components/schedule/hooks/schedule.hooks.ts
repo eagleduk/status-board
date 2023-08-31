@@ -1,17 +1,22 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { TNotionDatabase } from "../type/schedule.type";
+import { TNotionDatabase, TSchedule } from "../type/schedule.type";
 
 function useScheduleData() {
   const mode = process.env.NODE_ENV;
-  const [data, setData] = useState<TNotionDatabase<any> | null>(null);
+  const [data, setData] = useState<TNotionDatabase<TSchedule> | {}>({});
 
   useEffect(() => {
-    axios<TNotionDatabase<any>>(`${process.env.REACT_APP_BASE_URL}/schedules`, {
-      method: "GET",
-    })
-      .then((response) => setData(response.data))
-      .catch((err) => setData(null));
+    axios<TNotionDatabase<TSchedule>>(
+      `${process.env.REACT_APP_BASE_URL}/schedules`,
+      {
+        method: "GET",
+      }
+    )
+      .then((response) => {
+        setData(response.data);
+      })
+      .catch((err) => setData({}));
 
     // if (response.status === 200) {
     //   setData(response.data);

@@ -24,12 +24,42 @@ app.get("/schedules", async (req, res) => {
           direction: "ascending",
         },
         {
-          property: "hour",
+          property: "time",
           direction: "ascending",
         },
       ],
     })
-    .then((response) => res.status(200).send(response))
+    .then((response) => {
+      const result = {};
+
+      response.results.forEach(({ id, properties }) => {
+        const key = properties.date.date.start;
+        const obj = {
+          id: id,
+          date: properties.date.date.start,
+          isHome: properties.home.checkbox,
+          hour: properties.hour.number,
+          time: properties.time.number,
+          location: properties.location.rich_text.length
+            ? properties.location.rich_text[0].text.content
+            : null,
+          team: properties.team.rich_text.length
+            ? properties.team.rich_text[0].text.content
+            : null,
+          title: properties.title.title.length
+            ? properties.title.title[0].text.content
+            : null,
+          place: properties.place.rich_text.length
+            ? properties.place.rich_text[0].text.content
+            : null,
+        };
+        result[key] = result[key] ? [...result[key], obj] : [obj];
+      });
+
+      console.log(result);
+
+      res.status(200).send(result);
+    })
     .catch((err) => res.status(err.status).send(err.message));
   //   console.log(response);
   //   if (response?.status) {

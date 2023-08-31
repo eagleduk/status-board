@@ -105,10 +105,10 @@ function Schedule() {
   //     });
   //   })();
   // });
-  // console.log(datas);
+  console.log(datas);
   return (
     <ScheduleStyled>
-      {datas &&
+      {/* {datas &&
         datas.results.map(
           ({
             id,
@@ -151,14 +151,11 @@ function Schedule() {
               </ScheduleItemsStyled>
             );
           }
-        )}
-      {/* {Object.entries(datas).map(([key, values]) => {
-        const text = new Date(+key);
+        )} */}
+      {Object.entries(datas).map(([key, values]) => {
         return (
           <ScheduleItemsStyled key={key}>
-            <ScheduleItemTitleStyled>
-              {text.toLocaleDateString()}
-            </ScheduleItemTitleStyled>
+            <ScheduleItemTitleStyled>{key}</ScheduleItemTitleStyled>
             <ScheduleItemRowsStyled>
               {values.map((item, index) => {
                 return <ScheduleItem key={index} item={item} />;
@@ -166,7 +163,7 @@ function Schedule() {
             </ScheduleItemRowsStyled>
           </ScheduleItemsStyled>
         );
-      })} */}
+      })}
     </ScheduleStyled>
   );
 }
