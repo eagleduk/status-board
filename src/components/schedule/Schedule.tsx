@@ -105,7 +105,7 @@ function Schedule() {
   //     });
   //   })();
   // });
-  console.log(datas);
+  // console.log(datas);
   return (
     <ScheduleStyled>
       {/* {datas &&

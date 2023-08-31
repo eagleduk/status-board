@@ -56,15 +56,9 @@ app.get("/schedules", async (req, res) => {
         result[key] = result[key] ? [...result[key], obj] : [obj];
       });
 
-      console.log(result);
-
       res.status(200).send(result);
     })
     .catch((err) => res.status(err.status).send(err.message));
-  //   console.log(response);
-  //   if (response?.status) {
-  //     console.log(response);
-  //   }
 });
 
 app.listen(PORT, () => {});
