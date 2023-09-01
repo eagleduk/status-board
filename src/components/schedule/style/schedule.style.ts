@@ -7,11 +7,12 @@ export const ScheduleStyled = styled.div`
   gap: 20px;
 `;
 
-export const ScheduleItemsStyled = styled.div`
+export const ScheduleItemsStyled = styled.div<{ $status: "passed" | "ready" }>`
   border: 1px solid black;
   border-radius: 10px;
   overflow: hidden;
   box-sizing: border-box;
+  opacity: ${(prop) => (prop.$status === "passed" ? 0.4 : 1)};
 `;
 
 export const ScheduleItemTitleStyled = styled.h1`

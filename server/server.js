@@ -31,11 +31,18 @@ app.get("/schedules", async (req, res) => {
     })
     .then((response) => {
       const result = {};
+      let latestCount = 0;
 
       response.results.forEach(({ id, properties }) => {
         const key = properties.date.date.start;
+        let latest = false;
+        if (latestCount === 0 && new Date(key).getTime() > Date.now()) {
+          latestCount = 1;
+          latest = true;
+        }
         const obj = {
           id: id,
+          latest: latest,
           date: properties.date.date.start,
           isHome: properties.home.checkbox,
           hour: properties.hour.number,

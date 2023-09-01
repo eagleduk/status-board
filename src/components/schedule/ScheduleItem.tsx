@@ -1,3 +1,4 @@
+import Emblem from "../common/Emblem";
 import { ScheduleItemStyled } from "./style/schedule.style";
 import { TScheduleItem } from "./type/schedule.type";
 import { IoLocationOutline } from "react-icons/io5";
@@ -9,7 +10,7 @@ function ScheduleItem({
     if (isHome) {
       return (
         <>
-          <span>A</span>
+          <Emblem />
           vs
           <span></span>
         </>
@@ -19,7 +20,7 @@ function ScheduleItem({
         <>
           <span></span>
           vs
-          <span>A</span>
+          <Emblem />
         </>
       );
     }
@@ -31,11 +32,11 @@ function ScheduleItem({
       <div>
         <p>{VersusText(team, isHome)}</p>
         <p>
-          {location && place && (
+          {location && (
             <a
               href={`https://map.kakao.com/?w3w=${location}`}
               target="_black"
-              title={place}
+              title={place ? place : ""}
             >
               <span>
                 <IoLocationOutline />
