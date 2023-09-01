@@ -23,7 +23,7 @@ function Schedule() {
         items.current[i].scrollIntoView();
       }
     }
-  }, [datas, items]);
+  }, [datas, items, now]);
 
   if (!datas) return <Loading />;
 
