@@ -5,7 +5,7 @@ const cors = require("cors");
 const notion = require("@notionhq/client");
 
 const app = express();
-const PORT = 3005;
+const PORT = process.env.BACKEND_PORT;
 
 app.use(cors());
 
