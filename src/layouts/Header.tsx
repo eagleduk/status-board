@@ -51,16 +51,20 @@ function Header() {
       <nav>
         <ul>
           <li>
-            <Link to="/info">info</Link>
+            <Link to={`${process.env.PUBLIC_URL}/info`}>info</Link>
           </li>
           <li>
-            <Link to={`/calendar/${year}/${month + 1}`}>calendar</Link>
+            <Link
+              to={`${process.env.PUBLIC_URL}/calendar/${year}/${month + 1}`}
+            >
+              calendar
+            </Link>
           </li>
           <li>
-            <Link to={`/schedule/`}>schedule</Link>
+            <Link to={`${process.env.PUBLIC_URL}/schedule/`}>schedule</Link>
           </li>
           <li>
-            <Link to="/address">address</Link>
+            <Link to={`${process.env.PUBLIC_URL}/address`}>address</Link>
           </li>
         </ul>
       </nav>

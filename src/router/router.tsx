@@ -6,23 +6,23 @@ import Schedule from "../components/schedule/Schedule";
 
 const Router = createBrowserRouter([
   {
-    path: "/",
+    path: `${process.env.PUBLIC_URL}`,
     element: <App />,
     children: [
       {
-        path: "/info",
+        path: `${process.env.PUBLIC_URL}/info`,
         element: <h1>info</h1>,
       },
       {
-        path: "/calendar/:year/:month",
+        path: `${process.env.PUBLIC_URL}/calendar/:year/:month`,
         element: <Calendar />,
       },
       {
-        path: "/schedule/",
+        path: `${process.env.PUBLIC_URL}/schedule`,
         element: <Schedule />,
       },
       {
-        path: "/address",
+        path: `${process.env.PUBLIC_URL}/address`,
         element: <h1>address</h1>,
       },
     ],
