@@ -27,7 +27,6 @@ function Schedule() {
 
   if (!datas) return <Loading />;
 
-  console.log("Schedule....  ", datas);
   return (
     <ScheduleStyled>
       {Object.entries(datas).map(([key, values], index) => {
