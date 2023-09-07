@@ -29,19 +29,17 @@ function Schedule() {
 
   return (
     <ScheduleStyled>
-      {Object.entries(datas).map(([key, values], index) => {
+      {Object.entries(datas).map(([key, value], index) => {
         return (
           <ScheduleItemsStyled
             key={key}
-            $status={
-              new Date(key).setHours(24, 0, 0, -1) < now ? "passed" : "ready"
-            }
+            $status={value.passed ? "passed" : "ready"}
             ref={(el: HTMLDivElement) => (items.current[index] = el)}
             data-date={key}
           >
             <ScheduleItemTitleStyled>{key}</ScheduleItemTitleStyled>
             <ScheduleItemRowsStyled>
-              {values.map((item, index) => {
+              {value.data.map((item, index) => {
                 return <ScheduleItem key={index} item={item} />;
               })}
             </ScheduleItemRowsStyled>

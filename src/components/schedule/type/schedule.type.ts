@@ -8,7 +8,6 @@ export type TSchedule = {
   isHome: boolean;
   id: string;
   standard: boolean;
-  passed: boolean;
 };
 
 export type TSchedules = {
@@ -20,7 +19,10 @@ export type TScheduleItem = {
 };
 
 export type TNotionDatabase<T> = {
-  [key: string]: T[];
+  [key: string]: {
+    passed: boolean;
+    data: T[];
+  };
   // results: T[];
   // object: string;
   // next_cursor?: null;
