@@ -7,6 +7,8 @@ export type TSchedule = {
   team: string | null;
   isHome: boolean;
   id: string;
+  standard: boolean;
+  passed: boolean;
 };
 
 export type TSchedules = {
