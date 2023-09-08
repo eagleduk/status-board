@@ -38,15 +38,15 @@ export const ScheduleItemStyled = styled.li`
   }
 
   h4 {
-    font-size: 1.2rem;
-    padding-left: 5px;
+    font-size: 1.4rem;
+    padding: 0 15px 0 5px;
   }
 
   div {
     display: flex;
     font-size: 1.8rem;
     justify-content: space-between;
-    padding: 5px 10px;
+    padding: 3px 10px;
     p {
       display: flex;
       align-items: center;
